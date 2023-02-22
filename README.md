@@ -1,4 +1,4 @@
-# Eris-Log
+# Eris-Utility
 This is going to make the logs pretty. Documentation and program WIP
 
 This has not been tested with multithreading. I have yet to implement mutexes and similar safeguards.    
