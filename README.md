@@ -11,8 +11,13 @@ GenPremake.bat generates a visual studio 2017 project file by default, use the s
 - Make a seperate namespace
 - Make this readme pretty, it's really really ugly as of now
 ## Documentation
+#### How to
+Be sure to check premake.lua and the example to see how to link this to a project. It's quite intuitive.
 #### Log.h
-Define `PREMADE_MACROS` if you want to use the macros written by me. Be sure to check /Example/src/main.cpp for a demonstration.
+Define `PREMADE_MACROS` if you want to use the macros written by me. Be sure to check /Example/src/main.cpp for a demonstration.    
+Log.h contains the following includes: <fstream>, <cstdarg>, <iomanip>, <iostream>, <string>, "_Time.h"    
+I have to find a way to move then into the Log.cpp file
+
 Log is a singleton, you can access it with Log.Get()
 - `void setLevel(uint8_t threatLevel, uint8_t verboseLevel)`    - used to set levels as below
 - `const enum Log::ThreatLevels : uint8_t { ErrorLvl, WarningLvl, InfoLvl }`     
