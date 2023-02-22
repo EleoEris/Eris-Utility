@@ -9,7 +9,7 @@ GenPremake.bat generates a visual studio 2017 project file by default, use the s
 - Make it safe for multithreading
 - Create variadic template with syntax like this: Log::Get().info(func_name, file_name, line, "Head{0}|Body{1}:{2}{1}-{0}", arg0, arg1, arg2)
 - Make a seperate namespace
-- Make this readme pretty, it's really really ugly as of now
+- Make this readme pretty, it's really really ugly as of now. Also describe each func parameter on its own.
 ## Documentation
 #### How to
 Be sure to check premake.lua and the example to see how to link this to a project. It's quite intuitive.
