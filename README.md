@@ -1,9 +1,9 @@
 # Eris-Log
-This is going to make the logs pretty. Documentation WIP
+This is going to make the logs pretty. Documentation and program WIP
 
 This has not been tested with multithreading. I have yet to implement mutexes and similar safeguards.    
 Yet to be tested on Linux and MacOS.    
-GenPremake.bat generates a visual studio 2017 project file by default, use the same batfile but be sure to [change the `vs2017` if you're using a different technology](https://premake.github.io/docs/Using-Premake/)
+GenPremake.bat generates a visual studio 2017 project file by default, use the same batfile but be sure to [change the `vs2017` if you're using a different technology.](https://premake.github.io/docs/Using-Premake/)
 
 ## To do in the future:
 - Make it safe for multithreading
@@ -25,5 +25,9 @@ Log is a singleton, you can access it with Log.Get()
   `Log::assert` is completely the same but takes `bool condition` as parameter before head, it will print only if condition is true. !!! It doesn't actually assert !!!    
   I highly suggest using a macro that will call a platform-specific assert together with Log::assert or use my macro LOG_ASSERT (it calls \_\_debugbreak(), which might not be available on your platform)
 #### _Time.h
+
+
 #### functions.h
+- `bool str2bool(std::string str)/bool str2bool(const char* str)`     converts a string such as "1" or "true" into a bool
+- `std::unordered_map<std::string, std::string> mapFromIni(std::string path, int maxSettings=255, std::string errorKey="INTERNAL_ERROR")`    Takes a file in the ini format and extracts its values to an unordered_map. In case of errors, you'll find the output in the generated map with the key "INTERNAL_ERROR". The max_size of the map by default is 255.
 
