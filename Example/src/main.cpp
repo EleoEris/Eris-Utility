@@ -15,4 +15,8 @@ int main() {
 	LOG_INFO_D("Custom Warning!", "This is an info message that'll only run in debug!");
 	LOG_ERR("Custom Error!", "This is an error message!");
 	LOG_SUCC("This one has no body");
+
+	LOG_SETLEVEL(1, 1);
+	LOG_INFO("Won't print the message", "Message");
+	LOG_ERR("Won't print the whole message", "Message");
 }

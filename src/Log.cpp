@@ -9,10 +9,6 @@ Log &Log::Get() {
 	return instance;
 }
 
-void Log::setLevel(uint8_t threatLevel, uint8_t verboseLevel) {
-	this->showThreatLevel	= (ThreatLevels)threatLevel;
-	this->verboseLevel		= (VerboseLevels)verboseLevel;
-}
 
 void Log::startup() {
 	//!// May break without correct permissions,

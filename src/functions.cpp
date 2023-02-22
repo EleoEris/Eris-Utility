@@ -39,7 +39,6 @@ bool str2bool(const char* str) {
 
 std::unordered_map<std::string, std::string> mapFromIni(std::string path, int maxSettings, std::string errorKey) {
 	std::ifstream ifs = std::ifstream(path);
-	// ini is potentially user input, so I want to avoid mods that would try to crash the game by loading too many strings
 	// 255 seems like a decent number (default value in constructor)
 	int counter = 0; 
 

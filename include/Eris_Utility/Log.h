@@ -11,9 +11,6 @@
 #include <string>
 #include "_Time.h"
 
-#define OVERWRITE_STL_SYNC // with this the class Log will call std::ios_base::sync_with_stdio(false); std::cin.tie(NULL);
-//#undef OVERWRITE_STL_SYNC // uncomment this line if you don't want it
-
 #if defined(__linux__) || defined(LINUX)
 constexpr char		DIR_DELIMITER		= '/';
 const string		NULL_FILE_REDIRECT	= " 2> /dev/null";
@@ -61,7 +58,12 @@ private:
 public:
 	static Log& Get();
 
-	void setLevel(uint8_t threatLevel, uint8_t verboseLevel);
+	inline void setLevel(uint8_t threatLevel, uint8_t verboseLevel) {
+		this->showThreatLevel = (ThreatLevels)threatLevel;
+		this->verboseLevel = (VerboseLevels)verboseLevel;
+	}
+	inline void setThreatLevel(uint8_t threatLevel) { this->showThreatLevel = (ThreatLevels)threatLevel; }
+	inline void setVerboseLevel(uint8_t verbLevel) { this->showThreatLevel = (ThreatLevels)verbLevel; }
 
 	// definitions in Log.tpp since they're templates
 	template<typename Fu = std::string_view, typename Fi = std::string_view, typename H = std::string_view, typename B = std::string_view>
@@ -94,7 +96,7 @@ public:
 };
 
 #include "../src/Log.tpp"
-#define PREMADE_MACROS
+
 #ifdef PREMADE_MACROS
 
 // ErisUtility _Time
@@ -108,11 +110,11 @@ public:
 #define			T_DATETIMET_CHG_FORMAT(f)		_Time::s_datetime.changeFormat(f)		// changes format of datetime
 
 // ErisUtility Log
+#define			LOG_SETLEVEL(threat, verb)	Log::Get().setLevel(threat, verb)
 #define			LOG_INFO(...)				Log::Get().info(__FUNCTION__, __LOG_FILENAME__, __LINE__, __VA_ARGS__)		// head, body and args to format body in c-style
 #define			LOG_WARN(...)				Log::Get().warn(__FUNCTION__, __LOG_FILENAME__, __LINE__, __VA_ARGS__)		// head, body and args to format body in c-style
 #define			LOG_SUCC(...)				Log::Get().success(__FUNCTION__, __LOG_FILENAME__, __LINE__, __VA_ARGS__)	// head, body and args to format body in c-style
 #define			LOG_ERR(...)				Log::Get().error(__FUNCTION__, __LOG_FILENAME__, __LINE__, __VA_ARGS__)		// head, body and args to format body in c-style
-#define			LOG_ASSERT(cond, ...)		Log::Get().assert_(__FUNCTION__, __LOG_FILENAME__, __LINE__, cond, __VA_ARGS__); if (cond) __debugbreak()
 
 #ifdef			_DEBUG
 #define			LOG_INFO_D(...)		Log::Get().info(__FUNCTION__, __LOG_FILENAME__, __LINE__, __VA_ARGS__)		// head, body and args to format body in c-style
