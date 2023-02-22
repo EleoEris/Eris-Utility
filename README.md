@@ -14,9 +14,9 @@ GenPremake.bat generates a visual studio 2017 project file by default, use the s
 #### How to
 Be sure to check premake.lua and the example to see how to link this to a project. It's quite intuitive.
 #### Log.h
+##### Prints logs in color and saves a copy to logs/ of the start project, with a precise naming convention    
 Define `PREMADE_MACROS` if you want to use the macros written by me. Be sure to check /Example/src/main.cpp for a demonstration.    
-Log.h contains the following includes: <fstream>, <cstdarg>, <iomanip>, <iostream>, <string>, "_Time.h"    
-I have to find a way to move then into the Log.cpp file
+Log.h contains the following includes: <fstream>, <cstdarg>, <iomanip>, <iostream>, <string>, "_Time.h". I have to find a way to move then into the Log.cpp file
 
 Log is a singleton, you can access it with Log.Get()
 - `void setLevel(uint8_t threatLevel, uint8_t verboseLevel)`    - used to set levels as below
@@ -34,6 +34,7 @@ Log is a singleton, you can access it with Log.Get()
 
 
 #### functions.h
+##### Offers some minor functionality.
 - `bool str2bool(std::string str)/bool str2bool(const char* str)`     
 converts a string such as "1" or "true" into a bool
 - `std::unordered_map<std::string, std::string> mapFromIni(std::string path, int maxSettings=255, std::string errorKey="INTERNAL_ERROR")`
