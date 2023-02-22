@@ -1,5 +1,5 @@
 # Eris-Utility
-This is going to make the logs pretty. Documentation and program WIP
+This is going to make c++ logs pretty and offer some minor utility. Documentation and program WIP
 
 This has not been tested with multithreading. I have yet to implement mutexes and similar safeguards.    
 Yet to be tested on Linux and MacOS.    
