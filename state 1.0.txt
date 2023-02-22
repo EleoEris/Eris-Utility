@@ -1,0 +1,2 @@
+Variadic templates implemented
+Need to make Log work well for multithreading (implement Mutex and everything else)
