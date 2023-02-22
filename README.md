@@ -14,7 +14,7 @@ GenPremake.bat generates a visual studio 2017 project file by default, use the s
 #### How to
 Be sure to check premake.lua and the example to see how to link this to a project. It's quite intuitive.
 #### Log.h
-##### Prints logs in color and saves a copy to logs/ of the start project, with a precise naming convention    
+##### Prints logs in color and saves a copy to logs/ of the start project, with a precise naming convention base on time of the start of the program    
 Define `PREMADE_MACROS` if you want to use the macros written by me. Be sure to check /Example/src/main.cpp for a demonstration.    
 Log.h contains the following includes: <fstream>, <cstdarg>, <iomanip>, <iostream>, <string>, "_Time.h". I have to find a way to move then into the Log.cpp file
 
