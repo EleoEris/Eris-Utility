@@ -12,7 +12,7 @@ GenPremake.bat generates a visual studio 2017 project file by default, use the s
 - Make this readme pretty, it's really really ugly as of now. Also describe each func parameter on its own.
 ## Documentation
 #### How to
-Be sure to check premake.lua and the example to see how to link this to a project. It's quite intuitive.
+Be sure to check premake.lua and the example to see how to setup and link this to a project. It's quite intuitive.
 #### Log.h
 ##### Prints logs in color and saves a copy to logs/ of the start project, with a precise naming convention base on time of the start of the program    
 Define `PREMADE_MACROS` if you want to use the macros written by me. Be sure to check /Example/src/main.cpp for a demonstration.    
